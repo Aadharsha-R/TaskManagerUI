@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "src\\app"
+		},
+		{
+			"path": "src\\assets"
+		},
+		{
+			"path": "src\\environments"
+		}
+	]
+}

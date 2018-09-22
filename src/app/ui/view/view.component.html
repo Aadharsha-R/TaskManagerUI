@@ -1,0 +1,95 @@
+<table class="table" >
+  <tr>
+    <td class="tdTask" >
+      <label for="txtTask">Task : </label>
+    </td>
+    <td>
+      <input type="text" id="txtTask" class="txtTaskCss" >
+    </td>
+    <td class="tdParentTask">
+      <label for="txtParentTask">Parent Task : </label>
+    </td>
+    <td>
+      <input type="text" id="txtParentTask" style="width:350px;" >
+    </td>
+  </tr>
+  <tr >
+    <td colspan="2" > 
+      <label for="txtPriorityFrom">Priority From : </label> &nbsp;
+      <input type="text" id="txtPriorityFrom" style="width:100px;" > &nbsp;
+      <label for="txtPriorityTo">Priority To : </label> &nbsp;
+      <input type="text" id="txtPriorityTo" style="width:100px;">
+    </td>
+    <td colspan="2">
+      <label for="dtStartDate" style="width:169px;" >Start Date : </label>
+      <input type="Date" id="dtStartDate" style="width:120px;" > &nbsp;
+      <label for="dtEndDate" style="width:100px;" >End Date : </label>
+      <input type="Date" id="dtEndDate" style="width:120px;" >
+    </td>
+  </tr>
+</table>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Task</th>
+      <th scope="col">Parent Task</th>
+      <th scope="col">Priority From</th>
+      <th scope="col">Priority To</th>
+      <th scope="col">Start Date</th>
+      <th scope="col">End Date</th>
+      <th scope="col"></th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tr>
+    <td>Task1</td>
+    <td>Parent Task1</td>
+    <td>0</td>
+    <td>10</td>
+    <td>09-09-2018</td>
+    <td>09-09-2018</td>
+    <td><button type="button" (click)='Update()'>Edit Task</button> </td>
+    <td><button type="button">End Task</button> </td>
+  </tr>
+  <tr>
+    <td>Task 2</td>
+    <td>Parent Task 2</td>
+    <td>0</td>
+    <td>20</td>
+    <td>09-09-2018</td>
+    <td>09-09-2018</td>
+    <td><button type="button" (click)='Update()'>Edit Task</button> </td>
+    <td><button type="button">End Task</button> </td>
+  </tr>
+  <tr>
+    <td>Task 3</td>
+    <td>Parent Task 3</td>
+    <td>0</td>
+    <td>30</td>
+    <td>09-09-2018</td>
+    <td>09-09-2018</td>
+    <td><button type="button" (click)='Update()'>Edit Task</button> </td>
+    <td><button type="button">End Task</button> </td>
+  </tr>
+  <tr>
+    <td>Task 4</td>
+    <td>Parent Task 4</td>
+    <td>10</td>
+    <td>20</td>
+    <td>09-09-2018</td>
+    <td>09-09-2018</td>
+    <td><button type="button" (click)='Update()'>Edit Task</button> </td>
+    <td><button type="button">End Task</button> </td>
+  </tr>
+  <tr>
+    <td>Task 5</td>
+    <td>Parent Task 5</td>
+    <td>15</td>
+    <td>20</td>
+    <td>09-09-2018</td>
+    <td>09-09-2018</td>
+    <td><button type="button" (click)='Update()'>Edit Task</button> </td>
+    <td><button type="button">End Task</button> </td>
+  </tr>
+</table>

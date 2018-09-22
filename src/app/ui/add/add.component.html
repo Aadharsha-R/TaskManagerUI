@@ -1,0 +1,60 @@
+<form>
+  <table>
+      <tr>
+          <td>
+              <strong>Task</strong>
+          </td>
+          <td>
+              <input type="text" id="txtTask" [(ngModel)]="item.TaskName" required name="TaskName" 
+              #TaskName="ngModel" >
+          </td>
+      </tr>
+      <tr>
+          <td>
+              <strong>Priority</strong>
+
+          </td>
+          <td>
+              <input type="range" id="txtRange" min="0" max="30" step="1" value="0" [(ngModel)]="item.Priority" name="Priority"
+                  oninput="txtRange_Priority.value=txtRange.value">
+          </td>
+          <td>
+                  <output id="txtRange_Priority"></output>
+          </td>   
+      </tr>
+      <tr>
+          <td>
+              <strong>Parent Task</strong>
+          </td>
+          <td>
+              <select id="txtParent" [(ngModel)]="item.ParentTask" name="ParentTask" style="width:210px;height:30px;">
+                  <option value="Select Parent Task">Select Parent Task</option>
+              </select>
+          </td>
+      </tr>
+      <tr>
+          <td>
+              <strong>Start Date</strong>
+          </td>
+          <td>
+              <input type="Date" id="dtStartDate" [(ngModel)]="item.StartDate" required name="StartDate">
+          </td>
+      </tr>
+      <tr>
+          <td>
+              <strong>End Date</strong>
+          </td>
+          <td>
+              <input type="Date" id="dtEndDate" [(ngModel)]="item.EndDate" name="EndDate">
+          </td>
+      </tr>
+      <tr>
+          <td colspan="2" class="btnAdd">
+              <input type="submit" class="btn btn-primary" (click)=Add() name="Add" value="Add">
+              &nbsp;&nbsp;
+              <input type="reset" class="btn btn-primary" name="Reset" value="Reset">
+          </td>
+      </tr>
+  </table>
+</form>
+

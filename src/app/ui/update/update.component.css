@@ -1,0 +1,48 @@
+tr
+{ 
+  padding:5px;
+  margin-left: 8px;
+  text-align: left; 
+}
+
+td
+{
+  padding:5px;
+  margin-left: 8px;
+  text-align: left;
+  width: 120px;
+}
+
+input[type="text"]
+{
+ width: 210px;
+ height: 30px;
+}
+
+input[type="Range"]
+{
+ width: 210px;
+ height: 30px;
+}
+
+input[type="Date"]
+{
+ width: 210px;
+ height: 30px;
+}
+
+input[type="Submit"]
+{
+ width: 70px;
+ height: 30px;
+}
+
+input[type="Reset"]
+{
+ width: 70px;
+ height: 30px;
+}
+.btnAdd
+{
+  padding-left: 125px; padding-top: 15px;
+}
