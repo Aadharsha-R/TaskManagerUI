@@ -1,4 +1,4 @@
-<form>
+<form #myForm="ngForm">
     <table>
         <tr>
             <td>
@@ -26,8 +26,9 @@
                 <strong>Parent Task</strong>
             </td>
             <td>
-                <select id="txtParent" [(ngModel)]="item.ParentTask" name="ParentTask" style="width:210px;height:30px;">
-                    <option value="Select Parent Task">Select Parent Task</option>
+                <select id="txtParent" [(ngModel)]="item.ParentTask"  name="ParentTask" style="width:210px;height:30px;">
+                    <option [value]="item.TaskName"  *ngFor="let item of list|filter" selected="item.ParentTask" >{{item.TaskName}}</option>
+                    <option [value]="" selected="item.ParentTask"></option>
                 </select>
             </td>
         </tr>
@@ -36,7 +37,7 @@
                 <strong>Start Date</strong>
             </td>
             <td>
-                <input type="Date" id="dtStartDate" [(ngModel)]="item.StartDate" required name="StartDate">
+                <input type="text" id="dtStartDate" [(ngModel)]="item.SDate"  required name="StartDate">
             </td>
         </tr>
         <tr>
@@ -44,12 +45,12 @@
                 <strong>End Date</strong>
             </td>
             <td>
-                <input type="Date" id="dtEndDate" [(ngModel)]="item.EndDate" name="EndDate">
+                <input type="text" id="dtEndDate" [(ngModel)]="item.EDate" name="EndDate">
             </td>
         </tr>
         <tr>
             <td colspan="2" class="btnAdd">
-                <input type="submit" class="btn btn-primary" (click)=Update() name="Update" value="Update">
+                <button type="button" class="btn btn-primary" (click)="Update(); myForm.reset()" name="Update" value="Update">Update</button>
                 &nbsp;&nbsp;
                 <input type="submit" class="btn btn-primary" (click)='cancel()' name="Cancel" value="Cancel">
             </td>

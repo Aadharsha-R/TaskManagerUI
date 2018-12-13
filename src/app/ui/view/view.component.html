@@ -1,30 +1,31 @@
+<!-- <form #myForm="ngForm"> -->
 <table class="table" >
   <tr>
     <td class="tdTask" >
       <label for="txtTask">Task : </label>
     </td>
     <td>
-      <input type="text" id="txtTask" class="txtTaskCss" >
+      <input type="text" placeholder=" Search by Task Name" [(ngModel)]="flagTaskName" (keyup)='SearchbyTaskName()'>
     </td>
     <td class="tdParentTask">
       <label for="txtParentTask">Parent Task : </label>
     </td>
     <td>
-      <input type="text" id="txtParentTask" style="width:350px;" >
+      <input type="text" placeholder=" Search by Parent Task" [(ngModel)]="flagParentTask" (keyup)='SearchbyParentTask()'>
     </td>
   </tr>
   <tr >
     <td colspan="2" > 
-      <label for="txtPriorityFrom">Priority From : </label> &nbsp;
-      <input type="text" id="txtPriorityFrom" style="width:100px;" > &nbsp;
+      <label for="txtPriorityFrom">Priority From: </label> &nbsp;
+      <input type="text"  id="txtPriorityFrom" style="width:80px;" placeholder=" Search" [(ngModel)]="flagPriorityFrom" (keyup)='SearchbyPriority()' > &nbsp;
       <label for="txtPriorityTo">Priority To : </label> &nbsp;
-      <input type="text" id="txtPriorityTo" style="width:100px;">
+      <input type="text" id="txtPriorityTo" style="width:80px;" placeholder=" Search" [(ngModel)]="flagPriorityTo" (keyup)='SearchbyPriority()' > &nbsp;
     </td>
     <td colspan="2">
-      <label for="dtStartDate" style="width:169px;" >Start Date : </label>
-      <input type="Date" id="dtStartDate" style="width:120px;" > &nbsp;
+      <label for="dtStartDate" style="width:100px;" >Start Date : </label>
+      <input type="Date" id="dtStartDate" style="width:120px;" [(ngModel)]="flagSDate" (change)='SearchbySDate()' > &nbsp;
       <label for="dtEndDate" style="width:100px;" >End Date : </label>
-      <input type="Date" id="dtEndDate" style="width:120px;" >
+      <input type="Date" id="dtEndDate" style="width:120px;" [(ngModel)]="flagEDate" (change)='SearchbyEDate()' > &nbsp;
     </td>
   </tr>
 </table>
@@ -32,21 +33,33 @@
 <table class="table">
   <thead>
     <tr>
-      <th scope="col">Task</th>
-      <th scope="col">Parent Task</th>
-      <th scope="col">Priority From</th>
-      <th scope="col">Priority To</th>
+      <th scope="col">TaskId</th>
+      <th scope="col">Task Name</th>
+      <th scope="col">Parent Name</th>
+      <th scope="col">Priority</th>
       <th scope="col">Start Date</th>
       <th scope="col">End Date</th>
       <th scope="col"></th>
       <th scope="col"></th>
     </tr>
   </thead>
-  <tr>
+  <tbody>
+    <tr *ngFor ="let item of list1">
+      <td>{{item.TaskId}}</td>
+      <td>{{item.TaskName}}</td>
+      <td>{{item.ParentTask}}</td>
+      <td>{{item.Priority}}</td>
+      <td>{{item.SDate | date:'dd-MM-yy'}}</td>
+      <td>{{item.EDate | date:'dd-MM-yy'}}</td>
+      <td><button type="button" [disabled]="item.TaskEndFlag" (click)=Update(item.TaskId)>Edit Task</button> </td>
+      <td><button type="button" [disabled]="item.TaskEndFlag"  (click)=EndTask(item.TaskId)>End Task</button> </td>
+    </tr>
+  </tbody>
+  <!-- <tr>
     <td>Task1</td>
     <td>Parent Task1</td>
     <td>0</td>
-    <td>10</td>
+      <td>10</td>
     <td>09-09-2018</td>
     <td>09-09-2018</td>
     <td><button type="button" (click)='Update()'>Edit Task</button> </td>
@@ -91,5 +104,7 @@
     <td>09-09-2018</td>
     <td><button type="button" (click)='Update()'>Edit Task</button> </td>
     <td><button type="button">End Task</button> </td>
-  </tr>
+  </tr> -->
 </table>
+<!-- </form> -->
+

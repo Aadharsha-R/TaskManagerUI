@@ -1,12 +1,19 @@
-<form>
+<form #myForm="ngForm">
   <table>
+        <tr hidden="true">
+                <td>
+                    <strong>Task Id</strong>
+                </td>
+                <td>
+                    <input type="text"  value=1 id="txtTaskId" [(ngModel)]="item.TaskId" required name="TaskId" >
+                </td>
+            </tr>
       <tr>
           <td>
               <strong>Task</strong>
           </td>
           <td>
-              <input type="text" id="txtTask" [(ngModel)]="item.TaskName" required name="TaskName" 
-              #TaskName="ngModel" >
+              <input type="text" id="txtTask" [(ngModel)]="item.TaskName" required name="TaskName">
           </td>
       </tr>
       <tr>
@@ -28,7 +35,9 @@
           </td>
           <td>
               <select id="txtParent" [(ngModel)]="item.ParentTask" name="ParentTask" style="width:210px;height:30px;">
-                  <option value="Select Parent Task">Select Parent Task</option>
+                <option [value]=""></option>
+                <option [value]="item.TaskName" *ngFor="let item of list|filter">{{item.TaskName}}</option>
+                  
               </select>
           </td>
       </tr>
@@ -37,7 +46,7 @@
               <strong>Start Date</strong>
           </td>
           <td>
-              <input type="Date" id="dtStartDate" [(ngModel)]="item.StartDate" required name="StartDate">
+              <input type="Date" id="dtStartDate" [(ngModel)]="item.SDate" required name="StartDate">
           </td>
       </tr>
       <tr>
@@ -45,14 +54,14 @@
               <strong>End Date</strong>
           </td>
           <td>
-              <input type="Date" id="dtEndDate" [(ngModel)]="item.EndDate" name="EndDate">
+              <input type="Date" id="dtEndDate" [(ngModel)]="item.EDate" name="EndDate">
           </td>
       </tr>
       <tr>
-          <td colspan="2" class="btnAdd">
-              <input type="submit" class="btn btn-primary" (click)=Add() name="Add" value="Add">
+          <td colspan="2" class="btnAdd" >
+              <button type="button" class="btn btn-primary" (click)="Add(); myForm.reset()" name="Add" value="Add">Add</button>
               &nbsp;&nbsp;
-              <input type="reset" class="btn btn-primary" name="Reset" value="Reset">
+              <input type="submit" class="btn btn-primary" name="Reset" (click)="myForm.reset()" value="Reset">
           </td>
       </tr>
   </table>
