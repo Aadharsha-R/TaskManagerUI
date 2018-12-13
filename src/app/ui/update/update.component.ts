@@ -35,7 +35,7 @@ export class UpdateComponent implements OnInit {
   this._service.Edit(this.item)
   .subscribe(i=>this.msg=i);
     console.log(this.msg);
-    alert('Task Updated!!!');
+    alert('Task Changes Updated!!!');
   //this._router.navigate(['/View']);
   }
    
